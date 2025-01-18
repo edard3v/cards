@@ -3,4 +3,15 @@
   gap: var(--lg);
   place-content: start;
   place-items: start;
+  background-image: url("./bg-home.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .hi {
+    display: grid;
+    gap: var(--lg);
+    p {
+      max-width: 600px;
+    }
+  }
 }
