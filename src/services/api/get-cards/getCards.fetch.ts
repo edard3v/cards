@@ -1,10 +1,11 @@
-import { EdarErr } from "src/errors/Edar.err";
+import { EdarErr } from "@errors/Edar.err";
 import { API } from "../api";
+import { GetCardsFetchParams, GetCardsRes } from "./types";
 
 export const getCardsFetch = async (
   params: GetCardsFetchParams
-): Promise<any> => {
-  const { signal, limit, page } = params;
+): Promise<GetCardsRes> => {
+  const { signal, limit = 20, page = 1 } = params;
 
   const url = `${API.baseUrl}/get-cards`;
   const newUrl = new URL(url);
@@ -25,10 +26,4 @@ export const getCardsFetch = async (
   }
 
   return await res.json();
-};
-
-export type GetCardsFetchParams = {
-  limit?: number;
-  page?: number;
-  signal: AbortSignal;
 };
