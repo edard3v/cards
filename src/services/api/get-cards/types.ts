@@ -8,10 +8,10 @@ export interface GetCardsRes {
   limit: number;
   page: number;
   totalPages: number;
-  records: Record[];
+  records: GetCardsRecord[];
 }
 
-interface Record {
+export interface GetCardsRecord {
   id: string;
   name: string;
   front: string;
