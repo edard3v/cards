@@ -1,3 +1,4 @@
+import css from "./Cards.module.css";
 import Layout from "@layouts/Layout/Layout";
 import { CARDS } from "./config";
 import { useGetCards } from "./useGetCards";
@@ -9,13 +10,15 @@ export default function Cards() {
 
   return (
     <Layout title={CARDS.display}>
-      <main>
+      <main className={css.cards}>
         {isLoading && <Loading />}
         {isError && !isLoading && <h1>Error</h1>}
 
-        {cards?.records.map((card) => (
-          <Card key={card.id} card={card} />
-        ))}
+        <section className={css.wrapper}>
+          {cards?.records.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
+        </section>
       </main>
     </Layout>
   );

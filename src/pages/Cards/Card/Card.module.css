@@ -1,7 +1,8 @@
 .card {
-  border: var(--border);
   padding: var(--lg);
-  width: 310px;
+  width: 300px;
+  background-color: var(--bg-surf);
+  border-radius: var(--md);
 
   display: grid;
   gap: var(--lg);
@@ -12,6 +13,7 @@
     cursor: pointer;
 
     img {
+      border-radius: var(--sm);
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -35,5 +37,11 @@
     display: grid;
     gap: var(--md);
     justify-items: start;
+  }
+
+  .back {
+    audio {
+      width: 100%;
+    }
   }
 }
