@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function Card({ card }: Props) {
   const [isBack, setIsBack] = useState(false);
-  const { name, front, img, likes, author, audio, back } = card;
+  const { name, front, img, likes, audio, back } = card;
   return (
     <article className={css.card}>
       <picture onClick={() => setIsBack(!isBack)}>
@@ -18,7 +18,6 @@ export default function Card({ card }: Props) {
       {!isBack ? (
         <div className={css.front}>
           <p>{front}</p>
-          <div>{author}</div>
         </div>
       ) : (
         <div className={css.back}>
